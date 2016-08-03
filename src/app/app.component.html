@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<div class="section col-md-4">
+      <app-timer-component [timerState] = "timerObj"></app-timer-component>
+
+    </div>
+  <div class="section col-md-4">
+      <h1> 6 Minute State Challenge </h1>
+
+      <label for="basic-url">You have gotten {{counter}} states</label>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon3">Lets GO!!</span>
+        <input (keyup) = "onKey($event)" [disabled]="timerObj.disable"type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+        <h3>{{ message}}</h3>
+</div>
+<div class="section col-md-4">
+  <div class="answers">
+    <ol class="list-group">
+      <li *ngFor="let state of correctStates" class="list-group-item">
+        {{state}}
+      </li>
+    </ol>
+  </div>
+
+</div>
